@@ -1,26 +1,38 @@
-# Bird-Species-Identifier
-This project presents a multi-modal deep learning system designed to identify bird species from both audio recordings of bird calls and images of birds. Developed with a focus on accuracy and user accessibility, the system combines advanced machine learning models with a user-friendly web interface.
+# 🐦 Bird Species Identifier: Audio & Image-Based
+This project is a bird species identification system that can predict bird species using either bird calls (audio recordings) or bird images. It integrates deep learning models with a Flask web app interface, providing additional insights such as scientific classification and Wikipedia information.
 
-Key Features:
-Multi-Modal Identification: Accurately classifies bird species using distinct inputs:
-Audio Recognition: Identifies birds based on their calls and vocalizations.
-Image Classification: Recognizes birds from photographs.
-Advanced Feature Extraction:
-Audio: Employs librosa to extract sophisticated features such as Mel-frequency cepstral coefficients (MFCCs), Chroma, Spectral Contrast, Tonnetz, and Spectral Bandwidth.
-Images: Utilizes image preprocessing techniques including rescaling and data augmentation, and leverages a pre-trained VGG16 model for robust feature learning.
-Deep Learning Models:
-Audio Model: Features an ensemble of deep learning architectures, including a Convolutional Recurrent Neural Network (CRNN) with an attention mechanism and a standard Convolutional Neural Network (CNN), trained for bird sound classification.
-Image Model: Utilizes a fine-tuned Convolutional Neural Network built upon the VGG16 architecture, benefiting from transfer learning on a large image dataset.
-Ensemble Learning (Audio): Enhances prediction robustness and accuracy for audio classification by combining the outputs of multiple audio models through an averaging ensemble method.
-Integrated Knowledge Base: Enriches identification results by fetching and displaying relevant information about the identified bird species from Wikipedia, including summaries, scientific names, and additional images.
-User-Friendly Web Interface (Flask): Provides an intuitive web application built with Flask, allowing users to easily:
-Upload audio files (WAV, MP3, FLAC, WebM, Ogg) or images (PNG, JPG, JPEG, WebP).
-Record audio directly from a microphone or capture images using a camera.
-View detailed prediction results and supplementary information in a clear format.
-Technologies Used:
-Backend: Python, Flask
-Machine Learning: TensorFlow, Keras, NumPy
-Audio Processing: Librosa, ffmpeg (for WebM conversion)
-Image Processing: Pillow (PIL)
-Data Handling: Scikit-learn (LabelEncoder), json, pickle
-External API: Wikipedia API wrapper
+🔍 Features
+🎙️ Audio Classification
+Detects bird species from recorded bird calls or uploaded audio files using a CRNN-CNN ensemble trained on Mel-frequency and spectral audio features.
+
+📸 Image Classification
+Identifies bird species from images using a fine-tuned VGG16 CNN model.
+
+🌐 Wikipedia Integration
+Automatically fetches Wikipedia summary, image, and link for the predicted species.
+
+🧠 Ensemble Learning
+Audio model includes both CRNN and CNN architectures combined into an ensemble to boost accuracy.
+
+💡 Robust Preprocessing
+Handles short audio clips, converts webm audio to WAV using FFmpeg, and ensures padded/truncated feature vectors.
+
+🖼️ Visual Training Summary
+Training accuracy/loss plots for image model saved automatically.
+
+🏗️ Tech Stack
+Frontend: HTML + JavaScript (Flask templates)
+
+Backend: Python (Flask)
+
+ML/DL Frameworks: TensorFlow / Keras
+
+Audio Processing: Librosa
+
+Image Model: VGG16 (transfer learning)
+
+Audio Model: CRNN + CNN Ensemble with Attention
+
+Storage: Local file uploads with validation
+
+Extra: Wikipedia API, FFmpeg integration, CORS support
